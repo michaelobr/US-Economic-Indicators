@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 if __name__ == "__main__":
     # Load in data from .csv files only using the 10 most recent years of data, 120 for monthly 40 for quarterly
     federal_funds_df = pd.read_csv("data/FEDFUNDS.csv").tail(120)
