@@ -1,12 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
 
 if __name__ == "__main__":
     # Load in data from .csv files only using the 10 most recent years of data, 120 for monthly 40 for quarterly
-    federal_funds_df = pd.read_csv("data/FEDFUNDS.csv").tail(120)
-    CPI_df = pd.read_csv("data/CPIAUCSL.csv").tail(120)
-    unemployment_df = pd.read_csv("data/UNRATE.csv").tail(120)
-    real_GDP_df = pd.read_csv("data/GDPC1.csv").tail(40)
+    federal_funds_df = pd.read_csv("data/FEDFUNDS.csv", parse_dates=["DATE"]).tail(120)
+    CPI_df = pd.read_csv("data/CPIAUCSL.csv", parse_dates=["DATE"]).tail(120)
+    unemployment_df = pd.read_csv("data/UNRATE.csv", parse_dates=["DATE"]).tail(120)
+    real_GDP_df = pd.read_csv("data/GDPC1.csv", parse_dates=["DATE"]).tail(40)
 
     # Initialize the plot figure
     plt.figure(figsize=(4, 1))
